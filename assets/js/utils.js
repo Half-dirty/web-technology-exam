@@ -358,7 +358,7 @@
         const isCourse = Boolean(input.isCourse);
         const weekLength = Number(input.weekLength || 0);
         const totalWeeks = Number(input.totalWeeks || 0);
-        const intensive = isCourse && weekLength > p.intensiveThresholdWeekHours;
+        const intensive = isCourse && weekLength >= p.intensiveThresholdWeekHours;
 
         const flags = {
             early_registration: early,

@@ -5,7 +5,7 @@ window.APP_CONFIG = {
   apiKey: "cf9d9c3a-27bd-422b-a940-579d912a1e89",
 
   pagination: {
-    coursesPerPage: 10,
+    coursesPerPage: 5,
     ordersPerPage: 5
   },
 
@@ -17,7 +17,7 @@ window.APP_CONFIG = {
     weekendMultiplier: 1.5,
     morningSurcharge: 400,
     eveningSurcharge: 1000,
-    intensiveThresholdWeekHours: 20,
+    intensiveThresholdWeekHours: 5,
     intensiveMultiplier: 1.2,
     excursionsMultiplier: 1.25,
     interactiveMultiplier: 1.5,
