@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinguaForge — языковая школа</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="notificationArea" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="fw-semibold">LinguaForge</span>
+        <span class="badge text-bg-light text-primary">School</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#courses">Курсы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tutors">Репетиторы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+          <li class="nav-item"><a class="nav-link fw-semibold" href="cabinet.html">Личный кабинет</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-7">
+          <h1 class="display-6 fw-semibold mb-3">Языковая школа для системного прогресса: курсы и занятия с репетиторами
+          </h1>
+          <p class="lead text-secondary mb-4">
+            Выбирайте курс по уровню, находите репетитора по опыту и расписанию, оформляйте и управляйте заявками в
+            личном кабинете.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-lg" href="#courses">Выбрать курс</a>
+            <a class="btn btn-outline-primary btn-lg" href="#tutors">Найти репетитора</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="fw-semibold">Формат обучения</div>
+                  <div class="text-secondary">Группы и персональные занятия</div>
+                </div>
+                <span class="badge text-bg-success">Online</span>
+              </div>
+              <hr>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="text-secondary small">Уровни</div>
+                  <div class="fw-semibold">A1–C1</div>
+                </div>
+                <div class="col-6">
+                  <div class="text-secondary small">Расписание</div>
+                  <div class="fw-semibold">Утро, день, вечер</div>
+                </div>
+                <div class="col-6">
+                  <div class="text-secondary small">Стоимость</div>
+                  <div class="fw-semibold">Прозрачный расчет</div>
+                </div>
+                <div class="col-6">
+                  <div class="text-secondary small">Заявки</div>
+                  <div class="fw-semibold">Онлайн-управление</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-lg-7">
+            <h2 class="h3 fw-semibold mb-3">О школе</h2>
+            <p class="mb-0 text-secondary">
+              LinguaForge — языковая школа, ориентированная на измеримый результат. Мы предлагаем курсы по уровням и
+              индивидуальные занятия с репетиторами.
+              Оформление, расчет стоимости и управление заявками выполняются онлайн через личный кабинет.
+            </p>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="card border-0 bg-body-tertiary">
+              <div class="card-body">
+                <div class="fw-semibold mb-2">Миссия</div>
+                <div class="text-secondary">
+                  Сделать изучение языка предсказуемым: понятная программа, удобное расписание и прозрачная стоимость на
+                  каждом шаге.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-body-tertiary">
+      <div class="container">
+        <h2 class="h3 fw-semibold mb-4">Преимущества изучения языка</h2>
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="fw-semibold mb-2">Карьера</div>
+                <div class="text-secondary">Доступ к международным вакансиям, профессиональной литературе и проектам с
+                  распределенными командами.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="fw-semibold mb-2">Путешествия</div>
+                <div class="text-secondary">Уверенное общение в поездках: навигация, сервис, документы и бытовые
+                  ситуации без стресса.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="fw-semibold mb-2">Навыки</div>
+                <div class="text-secondary">Развитие памяти, концентрации и языковой гибкости за счет регулярной
+                  практики и обратной связи.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="fw-semibold mb-2">Коммуникации</div>
+                <div class="text-secondary">Новые контакты и комфортное общение в учебе, работе и повседневных
+                  ситуациях.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="py-5">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+          <div>
+            <h2 class="h3 fw-semibold mb-1">Курсы</h2>
+            <p class="text-secondary mb-0">
+              Используйте поиск и фильтр по уровню, чтобы быстро подобрать программу. Доступные даты и время занятий
+              подгружаются автоматически.
+            </p>
+          </div>
+        </div>
+
+        <div class="card shadow-sm mb-3">
+          <div class="card-body">
+            <div class="row g-3 align-items-end">
+              <div class="col-12 col-lg-6">
+                <label class="form-label" for="courseSearchInput">Поиск по названию</label>
+                <input id="courseSearchInput" class="form-control" type="text"
+                  placeholder="Например: English, Spanish, Russian">
+              </div>
+              <div class="col-12 col-lg-4">
+                <label class="form-label" for="courseLevelSelect">Уровень</label>
+                <select id="courseLevelSelect" class="form-select">
+                  <option value="">Любой</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+              <div class="col-12 col-lg-2 d-grid">
+                <button id="resetCourseFiltersBtn" class="btn btn-outline-secondary" type="button">Сброс</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div id="coursesLoading" class="py-4 text-center text-secondary">Загрузка курсов…</div>
+            <div class="table-responsive">
+              <table class="table align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th>Название</th>
+                    <th class="text-nowrap">Уровень</th>
+                    <th class="text-nowrap">Преподаватель</th>
+                    <th class="text-nowrap">Длительность</th>
+                    <th class="text-nowrap">Цена/час</th>
+                    <th class="text-nowrap text-end">Действия</th>
+                  </tr>
+                </thead>
+                <tbody id="coursesTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <nav class="mt-3" aria-label="Пагинация курсов">
+          <ul id="coursesPagination" class="pagination justify-content-center mb-0"></ul>
+        </nav>
+
+        <div id="selectedCourseCard" class="card border-primary mt-4 d-none">
+          <div class="card-body">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+              <div>
+                <div class="fw-semibold">Выбран курс</div>
+                <div id="selectedCourseInfo" class="text-secondary"></div>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <button id="openCourseOrderBtn" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#orderModal">Оформить заявку</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tutors" class="py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+          <div>
+            <h2 class="h3 fw-semibold mb-1">Репетиторы</h2>
+            <p class="text-secondary mb-0">
+              Фильтруйте репетиторов по квалификации, опыту, языку и доступности. После выбора можно оформить заявку на
+              занятие.
+            </p>
+          </div>
+        </div>
+
+        <div class="card shadow-sm mb-3">
+          <div class="card-body">
+            <div class="row g-3 align-items-end">
+              <div class="col-12 col-lg-4">
+                <label class="form-label" for="tutorLevelSelect">Квалификация</label>
+                <select id="tutorLevelSelect" class="form-select">
+                  <option value="">Любая</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+              <div class="col-12 col-lg-4">
+                <label class="form-label" for="tutorMinExpInput">Опыт от (лет)</label>
+                <input id="tutorMinExpInput" class="form-control" type="number" min="0" step="1" value="0">
+              </div>
+              <div class="col-12 col-lg-4">
+                <label class="form-label" for="tutorLanguageSelect">Язык (предлагает)</label>
+                <select id="tutorLanguageSelect" class="form-select">
+                  <option value="">Любой</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <div class="fw-semibold mb-2">Доступные дни</div>
+                <div class="d-flex flex-wrap gap-2">
+                  <div class="form-check">
+                    <input class="form-check-input tutor-day" type="checkbox" value="Mon" id="dayMon">
+                    <label class="form-check-label" for="dayMon">Пн</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input tutor-day" type="checkbox" value="Tue" id="dayTue">
+                    <label class="form-check-label" for="dayTue">Вт</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input tutor-day" type="checkbox" value="Wed" id="dayWed">
+                    <label class="form-check-label" for="dayWed">Ср</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input tutor-day" type="checkbox" value="Thu" id="dayThu">
+                    <label class="form-check-label" for="dayThu">Чт</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input tutor-day" type="checkbox" value="Fri" id="dayFri">
+                    <label class="form-check-label" for="dayFri">Пт</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input tutor-day" type="checkbox" value="Sat" id="daySat">
+                    <label class="form-check-label" for="daySat">Сб</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input tutor-day" type="checkbox" value="Sun" id="daySun">
+                    <label class="form-check-label" for="daySun">Вс</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <label class="form-label" for="tutorTimeFromInput">Время с</label>
+                <input id="tutorTimeFromInput" class="form-control" type="time" value="">
+              </div>
+              <div class="col-12 col-lg-2">
+                <label class="form-label" for="tutorTimeToInput">Время до</label>
+                <input id="tutorTimeToInput" class="form-control" type="time" value="">
+              </div>
+
+              <div class="col-12 d-flex flex-wrap gap-2">
+                <button id="resetTutorFiltersBtn" class="btn btn-outline-secondary" type="button">Сброс</button>
+                <button id="openTutorOrderBtn" class="btn btn-primary" type="button" data-bs-toggle="modal"
+                  data-bs-target="#orderModal" disabled>Оформить заявку</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div id="tutorsLoading" class="py-4 text-center text-secondary">Загрузка репетиторов…</div>
+            <div class="table-responsive">
+              <table class="table align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th>Имя</th>
+                    <th class="text-nowrap">Уровень</th>
+                    <th class="text-nowrap">Языки</th>
+                    <th class="text-nowrap">Опыт</th>
+                    <th class="text-nowrap">Цена/час</th>
+                    <th class="text-nowrap text-end">Действия</th>
+                  </tr>
+                </thead>
+                <tbody id="tutorsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="selectedTutorCard" class="card border-primary mt-4 d-none">
+          <div class="card-body">
+            <div class="fw-semibold">Выбран репетитор</div>
+            <div id="selectedTutorInfo" class="text-secondary"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacts" class="py-4 border-top">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-lg-6">
+          <div class="fw-semibold">Контакты</div>
+          <div class="text-secondary">support@linguaforge.example · +7 (000) 000-00-00</div>
+        </div>
+        <div class="col-12 col-lg-6 text-lg-end">
+          <a class="text-decoration-none me-3" href="#">VK</a>
+          <a class="text-decoration-none me-3" href="#">YouTube</a>
+          <a class="text-decoration-none" href="#">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderModalTitle">Оформление заявки</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <form id="orderForm" class="vstack gap-3">
+            <input id="orderMode" type="hidden" value="course">
+            <input id="selectedCourseId" type="hidden" value="">
+            <input id="selectedTutorId" type="hidden" value="">
+
+            <div class="row g-3">
+              <div class="col-12 col-lg-6">
+                <label class="form-label" for="courseNameInput">Курс</label>
+                <input id="courseNameInput" class="form-control" type="text" value="" readonly>
+              </div>
+              <div class="col-12 col-lg-6">
+                <label class="form-label" for="teacherNameInput">Преподаватель</label>
+                <input id="teacherNameInput" class="form-control" type="text" value="" readonly>
+              </div>
+
+              <div id="courseScheduleBlock" class="col-12">
+                <div class="row g-3">
+                  <div class="col-12 col-lg-6">
+                    <label class="form-label" for="dateStartSelect">Дата начала</label>
+                    <select id="dateStartSelect" class="form-select"></select>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label class="form-label" for="timeStartSelect">Время занятия</label>
+                    <select id="timeStartSelect" class="form-select" disabled></select>
+                  </div>
+                </div>
+              </div>
+
+              <div id="tutorScheduleBlock" class="col-12 d-none">
+                <div class="row g-3">
+                  <div class="col-12 col-lg-4">
+                    <label class="form-label" for="tutorDateInput">Дата</label>
+                    <input id="tutorDateInput" class="form-control" type="date" value="">
+                  </div>
+                  <div class="col-12 col-lg-4">
+                    <label class="form-label" for="tutorTimeInput">Время начала</label>
+                    <input id="tutorTimeInput" class="form-control" type="time" value="">
+                  </div>
+                  <div class="col-12 col-lg-4">
+                    <label class="form-label" for="tutorDurationInput">Длительность (часы)</label>
+                    <input id="tutorDurationInput" class="form-control" type="number" min="1" max="40" step="1"
+                      value="1">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <label class="form-label" for="personsInput">Количество студентов</label>
+                <input id="personsInput" class="form-control" type="number" min="1" max="20" step="1" value="1">
+              </div>
+              <div class="col-12 col-lg-6">
+                <label class="form-label">Длительность и окончание</label>
+                <div class="form-control bg-body-tertiary">
+                  <div id="durationInfo" class="fw-semibold"></div>
+                  <div id="endDateInfo" class="text-secondary small"></div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="fw-semibold mb-2">Опции</div>
+                <div class="row g-2">
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="optSupplementary">
+                      <label class="form-check-label" for="optSupplementary">Дополнительные материалы</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="optPersonalized">
+                      <label class="form-check-label" for="optPersonalized">Индивидуальные занятия</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="optExcursions">
+                      <label class="form-check-label" for="optExcursions">Культурные экскурсии</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="optAssessment">
+                      <label class="form-check-label" for="optAssessment">Предварительная оценка</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="optInteractive">
+                      <label class="form-check-label" for="optInteractive">Интерактивная платформа</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex flex-wrap gap-2">
+                  <span id="badgeEarly" class="badge text-bg-success d-none">Ранняя регистрация -10%</span>
+                  <span id="badgeGroup" class="badge text-bg-success d-none">Группа 5+ -15%</span>
+                  <span id="badgeIntensive" class="badge text-bg-warning d-none">Интенсив +20%</span>
+                  <span id="badgeWeekend" class="badge text-bg-secondary d-none">Выходной коэффициент 1.5</span>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="card border-0 bg-body-tertiary">
+                  <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2">
+                    <div>
+                      <div class="fw-semibold">Итоговая стоимость</div>
+                      <div id="priceDetails" class="text-secondary small"></div>
+                    </div>
+                    <div class="display-6 fw-semibold mb-0"><span id="priceOutput">0</span> ₽</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="submitOrderBtn" type="button" class="btn btn-primary">Отправить</button>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinguaForge — личный кабинет</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <div id="notificationArea" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="fw-semibold">LinguaForge</span>
+        <span class="badge text-bg-light text-primary">Cabinet</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cabNav" aria-controls="cabNav" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="cabNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link active fw-semibold" href="cabinet.html">Личный кабинет</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5 flex-grow-1">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+        <div>
+          <h1 class="h3 fw-semibold mb-1">Мои заявки</h1>
+        </div>
+      </div>
+
+      <div id="ordersEmptyState" class="alert alert-secondary d-none" role="alert">
+        Заявок пока нет. Вернись на главную и оформи первую.
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div id="ordersLoading" class="py-4 text-center text-secondary">Загрузка заявок…</div>
+          <div class="table-responsive">
+            <table class="table align-middle mb-0">
+              <thead>
+                <tr>
+                  <th class="text-nowrap">№</th>
+                  <th>Заявка</th>
+                  <th class="text-nowrap">Дата</th>
+                  <th class="text-nowrap">Стоимость</th>
+                  <th class="text-nowrap text-end">Действия</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <nav class="mt-3" aria-label="Пагинация заявок">
+        <ul id="ordersPagination" class="pagination justify-content-center mb-0"></ul>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="py-4 border-top mt-auto">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-lg-6">
+          <div class="fw-semibold">Контакты</div>
+          <div class="text-secondary">support@linguaforge.example · +7 (000) 000-00-00</div>
+        </div>
+        <div class="col-12 col-lg-6 text-lg-end">
+          <a class="text-decoration-none me-3" href="#">VK</a>
+          <a class="text-decoration-none me-3" href="#">YouTube</a>
+          <a class="text-decoration-none" href="#">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderDetailsTitle">Подробнее о заявке</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <div id="orderDetailsBody" class="vstack gap-3"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="orderEditModal" tabindex="-1" aria-labelledby="orderEditTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderEditTitle">Редактирование заявки</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <form id="orderEditForm" class="vstack gap-3">
+            <input id="editOrderId" type="hidden" value="">
+            <input id="editOrderMode" type="hidden" value="course">
+            <input id="editCourseId" type="hidden" value="">
+            <input id="editTutorId" type="hidden" value="">
+
+            <div class="row g-3">
+              <div class="col-12 col-lg-6">
+                <label class="form-label" for="editCourseName">Курс</label>
+                <input id="editCourseName" class="form-control" type="text" value="" readonly>
+              </div>
+              <div class="col-12 col-lg-6">
+                <label class="form-label" for="editTutorName">Репетитор</label>
+                <input id="editTutorName" class="form-control" type="text" value="" readonly>
+              </div>
+
+              <div id="editCourseScheduleBlock" class="col-12">
+                <div class="row g-3">
+                  <div class="col-12 col-lg-6">
+                    <label class="form-label" for="editDateStartSelect">Дата</label>
+                    <select id="editDateStartSelect" class="form-select"></select>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <label class="form-label" for="editTimeStartSelect">Время</label>
+                    <select id="editTimeStartSelect" class="form-select" disabled></select>
+                  </div>
+                </div>
+              </div>
+
+              <div id="editTutorScheduleBlock" class="col-12 d-none">
+                <div class="row g-3">
+                  <div class="col-12 col-lg-4">
+                    <label class="form-label" for="editTutorDateInput">Дата</label>
+                    <input id="editTutorDateInput" class="form-control" type="date" value="">
+                  </div>
+                  <div class="col-12 col-lg-4">
+                    <label class="form-label" for="editTutorTimeInput">Время</label>
+                    <input id="editTutorTimeInput" class="form-control" type="time" value="">
+                  </div>
+                  <div class="col-12 col-lg-4">
+                    <label class="form-label" for="editTutorDurationInput">Длительность (часы)</label>
+                    <input id="editTutorDurationInput" class="form-control" type="number" min="1" max="40" step="1" value="1">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <label class="form-label" for="editPersonsInput">Количество студентов</label>
+                <input id="editPersonsInput" class="form-control" type="number" min="1" max="20" step="1" value="1">
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <label class="form-label">Итоговая стоимость</label>
+                <div class="form-control bg-body-tertiary">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-secondary small" id="editPriceDetails"></span>
+                    <span class="fw-semibold"><span id="editPriceOutput">0</span> ₽</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="fw-semibold mb-2">Опции</div>
+                <div class="row g-2">
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="editOptSupplementary">
+                      <label class="form-check-label" for="editOptSupplementary">Дополнительные материалы</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="editOptPersonalized">
+                      <label class="form-check-label" for="editOptPersonalized">Индивидуальные занятия</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="editOptExcursions">
+                      <label class="form-check-label" for="editOptExcursions">Культурные экскурсии</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="editOptAssessment">
+                      <label class="form-check-label" for="editOptAssessment">Предварительная оценка</label>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="editOptInteractive">
+                      <label class="form-check-label" for="editOptInteractive">Интерактивная платформа</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="d-flex flex-wrap gap-2">
+                  <span id="editBadgeEarly" class="badge text-bg-success d-none">Ранняя регистрация -10%</span>
+                  <span id="editBadgeGroup" class="badge text-bg-success d-none">Группа 5+ -15%</span>
+                  <span id="editBadgeIntensive" class="badge text-bg-warning d-none">Интенсив +20%</span>
+                  <span id="editBadgeWeekend" class="badge text-bg-secondary d-none">Выходной коэффициент 1.5</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="saveOrderBtn" type="button" class="btn btn-primary">Сохранить</button>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отмена</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteConfirmTitle">Удаление заявки</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <div class="fw-semibold mb-2">Вы уверены, что хотите удалить заявку?</div>
+          <div class="text-secondary">Это действие нельзя отменить.</div>
+          <input id="deleteOrderId" type="hidden" value="">
+        </div>
+        <div class="modal-footer">
+          <button id="confirmDeleteBtn" type="button" class="btn btn-danger">Да</button>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Нет</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/cabinet.js"></script>
+</body>
+</html>
