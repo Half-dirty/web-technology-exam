@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+
+.lf-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: inline-block;
+  object-fit: cover;
+}
+
+.lf-row-selected > td {
+  background-color: rgba(13, 110, 253, 0.12);
+}
+
+.lf-action-col {
+  white-space: nowrap;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
